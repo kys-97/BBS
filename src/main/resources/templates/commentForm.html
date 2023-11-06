@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>COMMENT</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <h5 class="my-3 border-bottom pb-2">MODIFY COMMENT</h5>
+    <form th:object="${commentForm}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div th:replace="~{formErrors :: formErrorsFragment}"></div>
+        <div class="mb-3">
+            <label for="content" class="form-label">CONTENT</label>
+            <textarea th:field="*{content}" class="form-control" rows="10"></textarea>
+        </div>
+        <input type="submit" value="SAVE" class="btn btn-primary my-2">
+    </form>
+</div>
+</body>
+</html>

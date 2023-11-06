@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN FORM</title>
+</head>
+<body>
+<div layout:fragment="content" class="container my-3">
+    <form th:action="@{/user/login}" method="post">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                CHECK YOUR ID OR PASSWORD
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">USER ID</label>
+            <input type="text" name="username" id="username" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">PASSWORD</label>
+            <input type="password" name="password" id="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+</div>
+</body>
+</html>

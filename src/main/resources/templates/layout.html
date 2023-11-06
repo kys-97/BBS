@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>Welcome To BBS Project</title>
+</head>
+<body>
+<!--navigation bar-->
+<nav th:replace="~{navbar::navbarFragment}"></nav>
+<!--layout.html 템플릿은 모든 템플릿이 상속해야 하는 템플릿으로 표준 HTML 문서의 기본 틀-->
+<!--body 엘리먼트 안의 <th:block layout:fragment="content"></th:block> 부분이 바로 layout.html을 상속한 템플릿에서 개별적으로 구현해야 하는 영역-->
+<!--layout.html 템플릿을 상속하면 <th:block layout:fragment="content"></th:block> 영역에 해당되는 부분만 작성해도 표준 HTML 문서가 되는 것-->
+<!--기본 템플릿 안에 삽입될 내용 시작-->
+<th:block layout:fragment="content"></th:block>
+<!--기본 템플릿 안에 삽입될 내용 끝-->
+<!-- Bootstrap JS -->
+<script th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{js/js.js}"></script>
+<!-- 자바스크립트 Start -->
+<th:block layout:fragment="script"></th:block>
+<!-- 자바스크립트 End -->
+</body>
+</html>

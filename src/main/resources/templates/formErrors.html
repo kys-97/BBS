@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<!--오류 메시지를 표시하는 공통 템플릿-->
+<!--출력할 오류메시지 부분에 th:fragment="formErrorsFragment" 속성을 추가-->
+<div th:fragment="formErrorsFragment" class="alert alert-danger"
+     role="alert" th:if="${#fields.hasAnyErrors()}">
+    <div th:each="error : ${#fields.allErrors()}" th:text="${error}" />
+</div>
+</body>
+</html>
